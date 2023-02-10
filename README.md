@@ -1,4 +1,4 @@
-## Encrypting helloworld!
+## Encrypting Hello world!
 Using RSA to demonstrate how to encrypt and decrypt "Hello world!" from ASCII to a secret message.
 
 The following message is encoded into the ASCII decimal code: 
