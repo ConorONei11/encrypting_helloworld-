@@ -5,20 +5,6 @@ Created on Thu Feb 17 12:31:34 2022
 @author: Con67
 """
 #Extended Euclidean algorithm
-a=1632
-b=642
- 
-#Finding gcd of two intgers a and b
-def gcd(a,b):
-    while b>0:
-      r=a%b
-      a=b
-      b=r
-    return(a)
-
-print(gcd(1632,642))
-print(gcd(51525,99157))
-print(gcd(51527,99157))
 
 #Finding gcd of two integers a and b
 #Also finding n and m where n*a+m*b = gcd(a,b)
@@ -41,5 +27,9 @@ def gcd2(a,b):
         y0=y00
     return(a,x1,y1)
 
+#We have that with N = 1363, p = 29 and q = 47
+#(p-1)(q-1) = 1288
+#Therefore 1288 is used with public key e = 17 in order to find private key d
 print(gcd2(1288,17))
-print(gcd2(98496,289))
+
+#-303 is outside range, therefore add 1288 to get 985. (Which is to be used in order to decrypt!!)
