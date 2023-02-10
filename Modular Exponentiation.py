@@ -19,11 +19,6 @@ def modexp(e,m,n):
             x[i+1] = (m*(x[i]**2))%n
     return(x[-1])
 
-#Various results used in investigation
-print(modexp(17,72,1363))
-print(modexp(985,504,1363))  
-print(modexp(-1,30,47))
-
 #Encryption function
 #Takes the word, transforms into ascii and returns cypher using modular exponentiation
 def encrypt(word,e,n):
@@ -35,10 +30,11 @@ def encrypt(word,e,n):
     return(message)
 
 #Encrypting Hello World
+#RSA public key (e,n) = (17,1363) where n = pq and p = 29, q = 47.  
 print(encrypt("Hello world!",17,1363))
  
 #Output of print(encrypt("Hello world!",17,1363))
-message3=[504, 852, 686, 686, 977, 582, 1162, 977, 791, 686, 1153, 818]
+secretcode=[504, 852, 686, 686, 977, 582, 1162, 977, 791, 686, 1153, 818]
 
 #Decryption function
 #Takes cypher and decrypts using private key
@@ -52,8 +48,9 @@ def decrypt(message2,d,n):
     return(' '.join(word2))
 
 #Result which returns the message Hello world!
-#Private key = 985 and n = 1363
-print(decrypt(message3,985,1363))
+#Private key d = 985 and n = 1363
+#Private key generated using extended euclidean algorithm (See file)
+print(decrypt(secretcode,985,1363))
 
 
   
